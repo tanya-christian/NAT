@@ -1,0 +1,56 @@
+1) How many total packets are present?
+-> 3921
+
+2. List the top 3 protocols by frequency.
+-> tcp, udp, tlsv
+
+3. Identify and list all unique IP addresses observed.
+->172.16.15.228, 104.18.32.47, 172.64.155.209, 199.232.21.91, 34.223.124.145
+
+4. Which IP address appears most frequently as a source?
+->172.16.15.228
+
+5. Apply the filter ip.addr == <most frequent IP> and count the number of packets.
+->3888(172.16.15.228)
+
+6. Apply the filter tcp – how many TCP packets are there?
+-> 1538
+
+7. Identify the source and destination MAC addresses of the first packet.
+-> eth.addr==74:40:bb:d4:60:99
+
+
+8. Apply a filter based on the source MAC address
+->eth.addr
+
+9. Find a complete TCP conversation (use Follow TCP Stream).
+->Go to Statistics then go to conversations(Ethernet....)
+
+10. What protocol is used in the application layer (HTTP, FTP, etc.)?
+-> http, ftp, tcp, udp
+11. Create a filter to show only TCP SYN packets: tcp.flags.syn ==1 and tcp.flags.ack == 0
+-> 38
+   
+12. How many packets match this filter?
+->38
+   
+13. List all unique destination TCP ports.
+->  dst port:- 443,45498, 57112, 47488
+
+14. Which service (protocol) is most commonly used?
+->tcp
+
+15. Add a column for “Time delta from previous captured packet”.
+->
+16. Identify the largest gap in packet arrival.
+->
+17. What is the average length of packets?
+->
+18. What is the length of the smallest and largest packet?
+->smallest:-54
+largest:-59192
+19. Create a color rule to highlight all TCP SYN packets in green.
+->
+
+20. Create a filter button for HTTP packets and assign a custom label.
+->
