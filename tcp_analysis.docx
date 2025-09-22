@@ -45,12 +45,19 @@ Questions:
 		-2 (2)^2 = 4
 	8192 * 4
     6. Measure RTT of TCP segments and estimate using TCP formula.
+               Statictis→Flow Graph->screenshot
 Questions:
     • What is the RTT of the first 5 segments?
+      screenshot
     • Compute Estimated RTT after each ACK.
 
     7. Detects packets received out-of-order.
+           tcp.analysis.out_of_order
 Questions:
     • Which packets arrived out-of-order?
+      Total Packets: 21
+      src: 10.0.0.1 
+      dst: 10.0.0.100
+      protocol: TCP
     • How did TCP handle them?
 
