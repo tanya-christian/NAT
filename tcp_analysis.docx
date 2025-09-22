@@ -1,0 +1,56 @@
+    1. Capture a TCP connection and identify SYN, SYN-ACK, and ACK.
+     tcp.stream eq 0
+Questions:
+    • Which packets are SYN, SYN-ACK, and ACK?
+Packet 1,2,3
+    • What are the source and destination ports?
+Source: 20000
+Destination: 80
+    • What is the initial sequence number?
+ISN: 0
+
+
+    2.  Find the size of TCP segments carrying application data.
+       tcp.port == 80 || tcp.port == 443
+Questions:
+    • What is the payload length of the first 5 data packets?
+Total length: 435
+    • Identify any large payload segments.
+	1538
+
+    3.  Detects retransmitted segments in a capture.
+       tcp.analysis.retransmission
+Questions:
+    • Which packet(s) were retransmitted?
+Total Packets: 68
+Src: 10.0.0.1 
+dst:10.0.0.100
+ISN: 9
+    • What is the RTT for the retransmission?
+
+    4. Identify duplicate ACKs in TCP.
+      tcp.analysis.duplicate_ack
+Questions:
+    • How many duplicate ACKs were observed?
+28
+    • What sequence number do they acknowledge?
+		Sequence no: 1
+
+    5. Understand flow control in TCP.
+  
+Questions:
+    • What is the advertised window size?
+8192
+    • How does window scaling affect throughput?
+		-2 (2)^2 = 4
+	8192 * 4
+    6. Measure RTT of TCP segments and estimate using TCP formula.
+Questions:
+    • What is the RTT of the first 5 segments?
+    • Compute Estimated RTT after each ACK.
+
+    7. Detects packets received out-of-order.
+Questions:
+    • Which packets arrived out-of-order?
+    • How did TCP handle them?
+
